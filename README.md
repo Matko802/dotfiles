@@ -1,1 +1,1 @@
-# my-linux-configs
+fastfetch config and starship config
