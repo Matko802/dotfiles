@@ -1,117 +1,142 @@
 {
   "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/dev/doc/json_schema.json",
   "logo": {
-    "source": "~/.config/fastfetch/shork.txt",
-    "color": {"1": "37"}
-  },
-  "display": {
-    "separator": " : "
+    "type": "file",
+    "source": "/home/matko/Plocha/fastfetch/shork.txt",
+    "color": { "1": "green" },
+    "padding": {
+      "top": 2,
+      "right": 6,
+      "left": 2
+    }
   },
   "modules": [
-    {
-      "type": "custom",
-      "format": "  \u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m "
-    },
-    {
-      "type": "custom",
-      "format": ""
-    },
-    {
-      "type": "custom",
-      "format": "  fish fish fish bum fish ",
-    },
-    {
-      "type": "custom",
-      "format": ""
-    },
-    {
-      "type": "os",
-      "key": "   OS",
-      "keyColor": "90"
-    },
-    {
-      "type": "kernel",
-      "key": "   Kernel",
-      "keyColor": "31"
-    },
-    {
-      "type": "packages",
-      "key": "   Packages",
-      "keyColor": "32"
-    },
-    {
-      "type": "display",
-      "key": "  󰍹 Display",
-      "keyColor": "33"
-    },
-    {
-      "type": "de",
-      "key": "   DE",
-      "keyColor": "34"
-    },
-    {
-      "type": "terminal",
-      "key": "   Terminal",
-      "keyColor": "35"
-    },
-
-     {
-            "type": "command",
-            "key": "   OS Age ",
-            "keyColor": "37",
-            "text": "birth_install=$(stat -c %W /); current=$(date +%s); time_progression=$((current - birth_install)); days_difference=$((time_progression / 86400)); echo $days_difference days"
-        },
-
-     {
-            "type": "uptime",
-            "key": "  ",
-            "keyColor": "90",
-        },
-    {
-      "type": "custom",
-      "format": "  󰊤  GitHub : Matko802",
-      "keyColor": "\u001b[38;5;75m"
-    },
-{
-  "type": "battery",
-  "key": "  󰂂 Battery",
-  "keyColor": "32"
-},
     "break",
     {
-      "type": "title",
-      "key": "   User",
-      "keyColor": "90"
+      "type": "custom",
+      "format": "\u001b[90m┌──────────────────────Hardware──────────────────────┐"
     },
     {
-      "type": "custom",
-      "format": ""
+      "type": "host",
+      "key": " PC",
+      "keyColor": "green"
     },
     {
       "type": "cpu",
-      "format": "{1}",
-      "key": "   CPU",
-      "keyColor": "35"
+      "key": "│ ├",
+      "showPeCoreCount": true,
+      "keyColor": "green"
     },
     {
       "type": "gpu",
-      "format": "{2}",
-      "key": "  󰊗 GPU",
-      "keyColor": "38"
+      "key": "│ ├",
+      "detectionMethod": "pci",
+      "keyColor": "green"
+    },
+    {
+      "type": "display",
+      "key": "│ ├󱄄",
+      "keyColor": "green"
+    },
+    {
+      "type": "disk",
+      "key": "│ ├󰋊",
+      "keyColor": "green"
     },
     {
       "type": "memory",
-      "key": "   RAM",
-      "keyColor": "36"
+      "key": "│ ├",
+      "keyColor": "green"
+    },
+    {
+      "type": "swap",
+      "key": "└ └󰓡 ",
+      "keyColor": "green"
     },
     {
       "type": "custom",
-      "format": ""
+      "format": "\u001b[90m└────────────────────────────────────────────────────┘"
     },
     "break",
     {
       "type": "custom",
-      "format": "  \u001b[90m  \u001b[31m  \u001b[32m  \u001b[33m  \u001b[34m  \u001b[35m  \u001b[36m  \u001b[37m "
+      "format": "\u001b[90m┌──────────────────────Software──────────────────────┐"
+    },
+    {
+      "type": "os",
+      "key": " OS",
+      "keyColor": "blue"
+    },
+    {
+      "type": "kernel",
+      "key": "│ ├",
+      "keyColor": "blue"
+    },
+    {
+      "type": "wm",
+      "key": "│ ├",
+      "keyColor": "blue"
+    },
+    {
+      "type": "de",
+      "key": " DE",
+      "keyColor": "blue"
+    },
+    {
+      "type": "terminal",
+      "key": "│ ├",
+      "keyColor": "blue"
+    },
+    {
+      "type": "packages",
+      "key": "│ ├󰏖",
+      "keyColor": "blue"
+    },
+    {
+      "type": "wmtheme",
+      "key": "│ ├󰉼",
+      "keyColor": "blue"
+    },
+    {
+      "type": "command",
+      "key": "│ ├󰸌",
+      "keyColor": "blue",
+      "text": "theme=$(omarchy-theme-current); echo -e \"$theme \\e[38m●\\e[37m●\\e[36m●\\e[35m●\\e[34m●\\e[33m●\\e[32m●\\e[31m●\""
+    },
+    {
+      "type": "terminalfont",
+      "key": "└ └",
+      "keyColor": "blue"
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[90m└────────────────────────────────────────────────────┘"
+    },
+    "break",
+    {
+      "type": "custom",
+      "format": "\u001b[90m┌────────────────Age / Uptime / Update───────────────┐"
+    },
+    {
+      "type": "command",
+      "key": "󱦟 OS Age",
+      "keyColor": "magenta",
+      "text": "echo $(( ($(date +%s) - $(stat -c %W /)) / 86400 )) days"
+    },
+    {
+      "type": "uptime",
+      "key": "󱫐 Uptime",
+      "keyColor": "magenta"
+    },
+    {
+      "type": "command",
+      "key": " Update",
+      "keyColor": "magenta",
+      "text": "updated=$(omarchy-version-pkgs); echo \"$updated\""
+    },
+    {
+      "type": "custom",
+      "format": "\u001b[90m└────────────────────────────────────────────────────┘"
     },
     "break"
   ]
