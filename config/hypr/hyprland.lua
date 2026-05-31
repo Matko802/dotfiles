@@ -175,7 +175,8 @@ hl.window_rule({
         class = "org.gnome.Calculator" 
     },
     float = true,
-    center = true
+    center = true,
+    size = { 900, 600 }
 })
 hl.window_rule({
     match = { 
@@ -205,6 +206,14 @@ hl.window_rule({
     },
     float = true,
     center = true
+})
+hl.window_rule({
+    match = { 
+        class = "gazelle-window" 
+    },
+    float = true,
+    center = true,
+    size = { 900, 600 }
 })
 hl.window_rule({
     match = { 
