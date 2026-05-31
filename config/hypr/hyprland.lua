@@ -27,6 +27,7 @@ local hidden_ws = "special:hidden"
 hl.bind("SUPER + SHIFT + H", hl.dsp.window.move({ workspace = hidden_ws }))
 hl.bind("SUPER + H", hl.dsp.workspace.toggle_special("hidden"))
 hl.bind("XF86Calculator", hl.dsp.exec_cmd(calculator))
+hl.bind("F6", hl.dsp.global(":_toggle_recording"))
 
 --ALT TAB
 local current_window_state = 0
@@ -198,3 +199,18 @@ hl.window_rule({
     center = true,
     size = { 900, 600 }
 })   
+hl.window_rule({
+    match = { 
+        class = "steam" 
+    },
+    float = true,
+    center = true
+})
+hl.window_rule({
+    match = { 
+        class = "org.pulseaudio.pavucontrol" 
+    },
+    float = true,
+    center = true,
+    size = { 900, 600 }
+})
