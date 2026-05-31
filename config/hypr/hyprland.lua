@@ -183,7 +183,8 @@ hl.window_rule({
         class = "localsend" 
     },
     float = true,
-    center = true
+    center = true,
+    size = { 900, 600 }
 })
 hl.window_rule({
     match = { 
@@ -202,10 +203,12 @@ hl.window_rule({
 })   
 hl.window_rule({
     match = { 
-        class = "steam" 
+        class = "steam",
+        title = "^Steam$" -- Matches exactly "Steam", ignoring the loading/login popups
     },
     float = true,
-    center = true
+    center = true,
+    size = { 1000, 900 }
 })
 hl.window_rule({
     match = { 
@@ -222,4 +225,12 @@ hl.window_rule({
     float = true,
     center = true,
     size = { 900, 600 }
+})
+hl.window_rule({
+    match = { 
+        class = "mpv" 
+    },
+    float = true,
+    center = true,
+    size = { 900, 900 }
 })
