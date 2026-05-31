@@ -1,21 +1,19 @@
 OPTIONS="󰌾 Lock\n󰒲 Suspend\n Reboot\n󰐥 Shutdown\n󰠚 Log Out"
-
 SELECTION=$(printf "$OPTIONS" | fuzzel --dmenu --lines=5 --width=15)
-
 case "$SELECTION" in
     *"Lock")
         hyprlock
         ;;
     *"Suspend")
-        systemctl suspend
+        hyprlock & sleep 1 && systemctl suspend
         ;;
     *"Reboot")
-        systemctl reboot
+        hyprshutdown -t 'Restarting...' --post-cmd 'systemctl reboot'
         ;;
     *"Shutdown")
-        systemctl poweroff
+        hyprshutdown -t 'Shutting down...' --post-cmd 'systemctl poweroff'
         ;;
     *"Log Out")
-        hyprctl dispatch 'hl.dsp.exit()'
+        hyprshutdown -t 'Logging out...'
         ;;
 esac
