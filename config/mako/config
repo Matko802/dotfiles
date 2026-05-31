@@ -50,7 +50,7 @@ border-color=#FFFFFF
 border-radius=0
 
 # Set popup progress indicator color to color.( value [over|source] ( #RRGGBB | #RRGGBBAA ))
-progress-color=over #0b1c1c
+progress-color=over #ffffff7a
 
 # Show icons in notifications.( value: -1 | 1 )
 icons=1
