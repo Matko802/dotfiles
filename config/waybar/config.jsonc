@@ -39,7 +39,7 @@
         "max-length": 50,
         "separate-outputs": true
     },
-    "modules-right": ["group/systray", "pulseaudio", "network", "cpu", "memory", "battery", "clock"],
+    "modules-right": ["group/systray", "pulseaudio", "network#ethernet","network#wifi", "cpu", "memory", "battery", "clock"],
 
     "group/systray": {
         "orientation": "horizontal",
@@ -63,7 +63,6 @@
     },
     
     "clock": {
-        "timezone": "Europe/Bratislava",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format": " {:%H:%M}",
         "format-alt": " {:%Y-%m-%d}"
@@ -85,18 +84,26 @@
         "format-plugged": "{capacity}%",
         "format-icons": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"]
     },
-    "network": {
-        "format-wifi": "",
-        "format-ethernet": "",
-        "format-disconnected": "󰖪",
-        "tooltip-format": "{essid} ({signaldBm}dBm)",
-        "on-click": "nm-connection-editor"
+    "network#wifi": {
+    "interface": "wlan*",
+    "format-wifi": "{icon}",
+    "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+    "tooltip": false,
+    "on-click": "kitty --class gazelle-window -e gazelle"
+    
+    },
+
+    "network#ethernet": {
+    "interface": "enp*",
+    "format-ethernet": "",
+    "tooltip": false,
+    "on-click": "kitty --class gazelle-window -e gazelle"
     },
     "pulseaudio": {
         "format": "{icon} {volume}%",
         "format-bluetooth": "󰂯{icon} {volume}%",
         "scroll-step": 5,
-        "format-muted": "󰝟",
+        "format-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "󱡒",
