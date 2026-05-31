@@ -1,30 +1,32 @@
-local mainMod = "SUPER"
 local terminal = "kitty"
-local fileManager = "nemo"
+local filemanager = "nemo"
 local menu = "fuzzel"
 local browser = "librewolf"
+local emoji = "bemoji"
+local calculator = "gnome-calculator"
 -- Keybinds
-hl.bind("SUPER+RETURN", hl.dsp.exec_cmd("kitty"))
+hl.bind("SUPER+RETURN", hl.dsp.exec_cmd(terminal))
 hl.bind("SUPER+W", hl.dsp.window.close())
 hl.bind("SUPER+L", hl.dsp.exec_cmd("hyprlock"))
-hl.bind("SUPER+ESCAPE", hl.dsp.exec_cmd("kitty -e btop"))
+hl.bind("SUPER+ESCAPE", hl.dsp.exec_cmd(terminal .. " -e btop"))
 hl.bind("SUPER+M", hl.dsp.exec_cmd("~/.config/hypr/fuzzel-power.sh"))
-hl.bind("SUPER+E", hl.dsp.exec_cmd("nemo"))
-hl.bind("SUPER+B", hl.dsp.exec_cmd("librewolf"))
+hl.bind("SUPER+E", hl.dsp.exec_cmd(filemanager))
+hl.bind("SUPER+B", hl.dsp.exec_cmd(browser))
 hl.bind("SUPER+T", hl.dsp.window.float())
-hl.bind("SUPER+Period", hl.dsp.exec_cmd("bemoji"))
-hl.bind("SUPER+SPACE", hl.dsp.exec_cmd("fuzzel"))
+hl.bind("SUPER+Period", hl.dsp.exec_cmd(emoji))
+hl.bind("SUPER+SPACE", hl.dsp.exec_cmd(menu))
 hl.bind("SUPER+mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER+mouse:273", hl.dsp.window.resize(), { mouse = true })
 hl.bind("SUPER+F", hl.dsp.window.fullscreen_state({ internal = 1, client = 1, action = "toggle" }))   
 hl.bind("SUPER+V", hl.dsp.exec_cmd("cliphist list| fuzzel --dmenu| cliphist decode| wl-copy"))
-hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output -m active --raw| satty -f-"))
-hl.bind("SHIFT+PRINT", hl.dsp.exec_cmd("hyprshot -m region --raw| satty -f-"))
+hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output -m active --raw | satty -f - --output-filename '/home/matko/Obrázky/Screenshots/screenshot-%Y-%m-%d_%H-%M-%S.png'"))
+hl.bind("SHIFT+PRINT", hl.dsp.exec_cmd("hyprshot -m region --raw | satty -f - --output-filename '/home/matko/Obrázky/Screenshots/screenshot-%Y-%m-%d_%H-%M-%S.png'"))
 hl.bind("SUPER+P", hl.dsp.exec_cmd("hyprpicker --autocopy"))
 hl.bind("XF86PowerOff", hl.dsp.exec_cmd("~/.config/hypr/fuzzel-power.sh"))
 local hidden_ws = "special:hidden"
 hl.bind("SUPER + SHIFT + H", hl.dsp.window.move({ workspace = hidden_ws }))
 hl.bind("SUPER + H", hl.dsp.workspace.toggle_special("hidden"))
+hl.bind("XF86Calculator", hl.dsp.exec_cmd(calculator))
 
 --ALT TAB
 local current_window_state = 0
@@ -143,7 +145,6 @@ hl.config({
         gaps_in = 5,
         gaps_out = 10,
     },
-
     dwindle = {
         preserve_split = true,
 
@@ -167,3 +168,33 @@ hl.on("config.reloaded", function()
     hl.exec_cmd("gsettings set local_var_GNOME_SCHEMA cursor-theme 'Adwaita'")
     hl.exec_cmd("gsettings set local_var_GNOME_SCHEMA font-name 'JetBrainsMono Nerd Font'")
 end)
+--Window rules
+hl.window_rule({
+    match = { 
+        class = "org.gnome.Calculator" 
+    },
+    float = true,
+    center = true
+})
+hl.window_rule({
+    match = { 
+        class = "localsend" 
+    },
+    float = true,
+    center = true
+})
+hl.window_rule({
+    match = { 
+        class = "ytdownloader" 
+    },
+    float = true,
+    center = true
+})
+hl.window_rule({
+    match = { 
+        class = "com.gabm.satty" 
+    },
+    float = true,
+    center = true,
+    size = { 900, 600 }
+})   
