@@ -160,6 +160,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("wl-paste --type image --watch cliphist storehyprqt6engine.conf")
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("hypridle")
+    hl.exec_cmd("xhost +si:localuser:root")
 end)
 --Exec
 hl.on("config.reloaded", function()
