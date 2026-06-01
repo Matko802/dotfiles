@@ -86,9 +86,9 @@ if [ "$DO_PKGS" = true ]; then
         librewolf
         pavucontrol wireplumber
         gawk
-        otf-jetbrains-mono-nerd ttf-jetbrains-mono-nerd
+        ttf-jetbrains-mono-nerd
         qt5ct
-        adw-gtk3
+        adw-gtk-theme
         waypaper
         gnome-calculator
         mpv
