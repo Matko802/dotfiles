@@ -2,5 +2,5 @@
 2. for gtk style install gtk3,nwg-look
 3. for display install nwg-displays
 4. hyprland things install sudo pacman -S hyprshutdown hyprshot hyprpicker hyprlock hypridle waypaper awww fuzzel paru -S waybar-git
-5. essential tools: sudo pacman -S gufw xorg-xhost pavucontrol kitty nemo librewolf gparted paru -S gazelle-tui
+5. essential tools: sudo pacman -S gufw xorg-xhost pavucontrol kitty nemo gvfs-mtp librewolf gparted paru -S gazelle-tui
 6. 
