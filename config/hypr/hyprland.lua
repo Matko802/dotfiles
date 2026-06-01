@@ -18,7 +18,7 @@ hl.bind("SUPER+SPACE", hl.dsp.exec_cmd(menu))
 hl.bind("SUPER+mouse:272", hl.dsp.window.drag(), { mouse = true })
 hl.bind("SUPER+mouse:273", hl.dsp.window.resize(), { mouse = true })
 hl.bind("SUPER+F", hl.dsp.window.fullscreen_state({ internal = 1, client = 1, action = "toggle" }))   
-hl.bind("SUPER+V", hl.dsp.exec_cmd("cliphist list| fuzzel --dmenu| cliphist decode| wl-copy"))
+hl.bind("SUPER + V", hl.dsp.exec_cmd("~/.config/hypr/cliphist-fuzzel-img.sh"))
 hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m output -m active --raw | satty -f - --output-filename '/home/matko/Obrázky/Screenshots/screenshot-%Y-%m-%d_%H-%M-%S.png'"))
 hl.bind("SHIFT+PRINT", hl.dsp.exec_cmd("hyprshot -m region --raw | satty -f - --output-filename '/home/matko/Obrázky/Screenshots/screenshot-%Y-%m-%d_%H-%M-%S.png'"))
 hl.bind("SUPER+P", hl.dsp.exec_cmd("hyprpicker --autocopy"))
@@ -157,7 +157,7 @@ hl.on("hyprland.start", function()
     hl.exec_cmd("waypaper --restore")
     hl.exec_cmd("waybar")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
-    hl.exec_cmd("wl-paste --type image --watch cliphist storehyprqt6engine.conf")
+    hl.exec_cmd("wl-paste --type image --watch cliphist store")
     hl.exec_cmd("systemctl --user start hyprpolkitagent")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("xhost +si:localuser:root")
@@ -176,8 +176,7 @@ hl.window_rule({
         class = "org.gnome.Calculator" 
     },
     float = true,
-    center = true,
-    size = { 900, 600 }
+    center = true
 })
 hl.window_rule({
     match = { 
@@ -185,7 +184,7 @@ hl.window_rule({
     },
     float = true,
     center = true,
-    size = { 900, 600 }
+    size = { 900, 800 }
 })
 hl.window_rule({
     match = { 
@@ -200,16 +199,14 @@ hl.window_rule({
     },
     float = true,
     center = true,
-    size = { 900, 600 }
+    size = { 900, 800 }
 })   
 hl.window_rule({
     match = { 
-        class = "steam",
-        title = "^Steam$" -- Matches exactly "Steam", ignoring the loading/login popups
+        class = "steam"
     },
     float = true,
-    center = true,
-    size = { 1000, 900 }
+    center = true
 })
 hl.window_rule({
     match = { 
@@ -217,7 +214,7 @@ hl.window_rule({
     },
     float = true,
     center = true,
-    size = { 900, 600 }
+    size = { 900, 800 }
 })
 hl.window_rule({
     match = { 
@@ -225,7 +222,7 @@ hl.window_rule({
     },
     float = true,
     center = true,
-    size = { 900, 600 }
+    size = { 900, 800 }
 })
 hl.window_rule({
     match = { 
@@ -233,5 +230,13 @@ hl.window_rule({
     },
     float = true,
     center = true,
-    size = { 900, 900 }
+    size = { 900, 800 }
+})
+hl.window_rule({
+    match = { 
+        class = "waypaper" 
+    },
+    float = true,
+    center = true,
+    size = { 900, 800 }
 })
