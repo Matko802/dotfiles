@@ -56,7 +56,7 @@ ForegroundInactive=161,169,177
 ForegroundLink=29,153,243
 ForegroundNegative=218,68,83
 ForegroundNeutral=246,116,0
-ForegroundNormal=252,252,252
+ForegroundNormal=255,255,255
 ForegroundPositive=39,174,96
 ForegroundVisited=155,89,182
 
@@ -137,8 +137,8 @@ TitlebarIsAccentColored=false
 shadeSortColumn=true
 
 [KDE]
-Contrast=2
-contrast=4
+Contrast=1
+contrast=1
 frameContrast=0.2
 
 [WM]
