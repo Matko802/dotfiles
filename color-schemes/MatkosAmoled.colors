@@ -4,8 +4,8 @@ ColorAmount=0
 ColorEffect=0
 ContrastAmount=0.65
 ContrastEffect=1
-IntensityAmount=0.1
-IntensityEffect=2
+IntensityAmount=-1
+IntensityEffect=0
 
 [ColorEffects:Inactive]
 ChangeSelectionColor=true
@@ -14,9 +14,9 @@ ColorAmount=0.025
 ColorEffect=2
 ContrastAmount=0.1
 ContrastEffect=2
-Enable=false
-IntensityAmount=0
-IntensityEffect=0
+Enable=true
+IntensityAmount=0.45
+IntensityEffect=2
 
 [Colors:Button]
 BackgroundAlternate=0,0,0
@@ -133,10 +133,13 @@ ForegroundVisited=155,89,182
 [General]
 ColorScheme=BreezeDark
 Name=Matko's Amoled
+TitlebarIsAccentColored=false
 shadeSortColumn=true
 
 [KDE]
+Contrast=2
 contrast=4
+frameContrast=0.2
 
 [WM]
 activeBackground=0,0,0
